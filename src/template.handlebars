@@ -1,0 +1,10 @@
+{{#if description}}
+#### {{description}}
+{{/if}}
+{{#if props}}
+name | type | required | default | description
+:--- | :--- | :--- | :--- | :---
+{{#each props}}
+{{@key}}|{{#if type}}{{type.name}}{{/if}}|{{#if required}}true{{else}}false{{/if}}|{{#if defaultValue}}{{defaultValue.value}}{{/if}}|{{description}}
+{{/each}}
+{{/if}}
