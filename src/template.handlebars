@@ -2,9 +2,26 @@
 #### {{description}}
 {{/if}}
 {{#if props}}
-name | type | required | default | description
-:--- | :--- | :--- | :--- | :---
-{{#each props}}
-{{@key}}|{{#if type}}{{type.name}}{{/if}}|{{#if required}}true{{else}}false{{/if}}|{{#if defaultValue}}{{defaultValue.value}}{{/if}}|{{description}}
-{{/each}}
+<table>
+<thead>
+    <tr>
+        <th>name</th>
+        <th>type</th>
+        <th>required</th>
+        <th>default</th>
+        <th>default</th>
+    </tr>
+</thead>
+<tbody>
+    {{#each props}}
+        <tr>
+            <td>{{@key}}</td>
+            <td>{{#if type}}{{type.name}}{{/if}}</td>
+            <td>{{#if required}}true{{else}}false{{/if}}</td>
+            <td>{{#if defaultValue}}{{breaklines defaultValue.value}}{{/if}}</td>
+            <td>{{breaklines description}}</td>
+        </tr>
+    {{/each}}
+</tbody>
+</table>
 {{/if}}
