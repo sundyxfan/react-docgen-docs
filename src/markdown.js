@@ -25,7 +25,7 @@ function fileToMarkdown(file, tplPath) {
     if (!file) { return; }
     var docMd = file.docs.map(function(d) {
         for (var key in d.props) {
-            if (d.props[key].type.name === 'union') {
+            if (d.props && d.props[key] && d.props[key].name && d.props[key].type.name === 'union') {
                 d.props[key].type.name = d.props[key].type.value.map(item => item.name).join(' | ');
             }
         }
