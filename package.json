@@ -1,6 +1,6 @@
 {
   "name": "react-docgen-docs",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "CLI tool that extracts information from React Components using react-docgen, transforms that information into Markdown and adds it to your README file.",
   "repository": {
     "type": "git",
